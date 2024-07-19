@@ -29,7 +29,7 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include("api.urls")),
-    path("/", home, name="home"),
+    path("", home, name="home"),
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),  # Serve favicon 
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
