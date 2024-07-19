@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.views import CreateUserView
+from api.views import CreateUserView, home
+from django.views.generic import RedirectView
+from django.conf.urls.static import static
+from django.conf import settings
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -26,4 +29,7 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include("api.urls")),
-]
+    path("/", home, name="home"),
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),  # Serve favicon 
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
