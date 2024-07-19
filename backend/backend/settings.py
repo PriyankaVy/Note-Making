@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-h67ipwmzycxewt+ek(7se76bfyvf1ou2-ucl4@r&@!6ofbiddv
 DEBUG = True
 
 # * allows any different host to host the Django application.
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "notesdb.s3-website.us-east-2.amazonaws.com", "3.139.200.136"]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -145,10 +145,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://notesdb.s3-website.us-east-2.amazonaws.com",
+    "https://notesdb.s3-website.us-east-2.amazonaws.com",
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+ #CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_CREDENTIALS = True
