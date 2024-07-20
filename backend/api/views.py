@@ -33,5 +33,4 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
 
-def home(request):
-    return HttpResponse("Welcome to Home Page")
+
