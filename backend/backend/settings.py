@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-h67ipwmzycxewt+ek(7se76bfyvf1ou2-ucl4@r&@!6ofbiddv
 DEBUG = False
 
 # * allows any different host to host the Django application.
-ALLOWED_HOSTS = ["*", "notesdb.s3-website.us-east-2.amazonaws.com", "3.139.200.136"]
+ALLOWED_HOSTS = [ "notesdb.s3-website.us-east-2.amazonaws.com", "3.139.200.136"]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
